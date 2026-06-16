@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Sevenine IELTS Placement Test</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+:root{--bl:#007AFF;--bll:#EAF3FF;--g1:#1C1C1E;--g2:#3A3A3C;--g3:#636366;--g4:#AEAEB2;--g5:#E5E5EA;--g6:#F2F2F7;--wh:#fff;--gn:#34C759;--gnl:#E8F9ED;--rd:#FF3B30;--rdl:#FFF0EF;--or:#FF9500;--pu:#AF52DE;--pul:#F5EAFF}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:"DM Sans",sans-serif;background:var(--g6);min-height:100vh;color:var(--g1);padding-bottom:60px}
+.bk{font-family:"DM Serif Display",serif;color:#000;letter-spacing:-.4px}
+.bb{font-family:"DM Serif Display",serif;color:var(--bl);letter-spacing:-.4px}
+.tb{padding:14px 16px 12px;border-bottom:.5px solid var(--g5);display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--wh);position:sticky;top:0;z-index:20;box-shadow:0 1px 8px rgba(0,0,0,.05)}
+.brand{font-size:20px;line-height:1;flex-shrink:0}
+.badge{font-size:10px;font-weight:600;color:var(--bl);background:var(--bll);padding:4px 10px;border-radius:20px;white-space:nowrap}
+.pgw{flex:1;display:flex;align-items:center;gap:8px;min-width:0}
+.pgb{flex:1;height:4px;background:var(--g5);border-radius:4px;overflow:hidden}
+.pgf{height:100%;background:var(--bl);border-radius:4px;transition:width .3s;width:0%}
+.pgl{font-size:11px;font-weight:600;color:var(--g3);white-space:nowrap;flex-shrink:0}
+.page{padding:16px 12px 24px;max-width:560px;margin:0 auto}
+.card{background:var(--wh);border-radius:16px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04)}
+.ct{font-family:"DM Serif Display",serif;font-size:16px;color:var(--g1);margin-bottom:6px}
+.csub{font-size:12px;color:var(--g3);margin-bottom:12px;line-height:1.5}
+.fl{font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--g4);margin-bottom:5px}
+.mi{font-family:"DM Sans",sans-serif;font-size:15px;color:var(--g1);background:var(--g6);border:1.5px solid var(--g5);border-radius:10px;padding:10px 12px;outline:none;width:100%;transition:border-color .15s}
+.mi:focus{border-color:var(--bl);background:var(--wh)}
+.passage{font-size:13px;color:var(--g2);line-height:1.7;padding:12px 14px;background:var(--g6);border-left:3px solid var(--bl);margin:0 12px 4px;border-radius:0 8px 8px 0}
+.rdg{font-size:13.5px;color:var(--g2);line-height:1.75}
+.rdg p{margin-bottom:10px}
+.rdg p:last-child{margin-bottom:0}
+.rdg em{font-style:italic;color:var(--g1)}
+.sec-label{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g4);margin:4px 4px 8px}
+.pts-label{font-size:10px;font-weight:600;color:var(--g4);margin-left:6px;font-style:normal}
+.rb{background:#FFF8E7;border:1px solid #FFE082;border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#7A5800;display:none;align-items:center;justify-content:space-between;gap:10px}
+.rb button{background:var(--or);color:var(--wh);border:none;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:"DM Sans",sans-serif}
+.qc{background:var(--wh);border-radius:16px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 4px 12px rgba(0,0,0,.04);border:1.5px solid var(--g5);transition:border-color .2s}
+.qc.ans{border-color:var(--bl)} .qc.ok{border-color:var(--gn)} .qc.no{border-color:var(--rd)}
+.qh{padding:12px 14px 10px;display:flex;align-items:flex-start;gap:10px;border-bottom:.5px solid var(--g5)}
+.qn{font-size:10px;font-weight:700;color:var(--bl);background:var(--bll);border-radius:6px;padding:3px 8px;flex-shrink:0;margin-top:1px}
+.qt{font-size:15px;font-weight:500;color:var(--g1);line-height:1.45;flex:1}
+.qo{padding:8px 12px 10px;display:flex;flex-direction:column;gap:6px}
+.ob{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--g5);background:var(--g6);cursor:pointer;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--g2);text-align:left;width:100%;transition:border-color .15s,background .15s,color .15s}
+.ob.sel{border-color:var(--bl);background:var(--bll);color:var(--bl);font-weight:600}
+.ob.ok{border-color:var(--gn);background:var(--gnl);color:#1a7a2e;font-weight:600}
+.ob.no{border-color:var(--rd);background:var(--rdl);color:#c0392b}
+.ob.dim{border-color:var(--g5);background:var(--g6);color:var(--g4)}
+.ob:disabled{pointer-events:none;cursor:default}
+.oi{width:18px;height:18px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--g4);background:var(--wh);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.ob.sel .oi{border-color:var(--bl);background:var(--bl);color:var(--wh)}
+.ob.ok .oi{border-color:var(--gn);background:var(--gn);color:var(--wh)}
+.ob.no .oi{border-color:var(--rd);background:var(--rd);color:var(--wh)}
+.fill-input{font-family:"DM Sans",sans-serif;font-size:14px;color:var(--g1);background:var(--g6);border:1.5px solid var(--g5);border-radius:10px;padding:10px 12px;outline:none;width:100%;transition:border-color .15s}
+.fill-input:focus{border-color:var(--bl);background:var(--wh)}
+.fill-input.ok{border-color:var(--gn);background:var(--gnl);color:#1a7a2e;font-weight:600}
+.fill-input.no{border-color:var(--rd);background:var(--rdl);color:#c0392b}
+.fill-input:disabled{pointer-events:none;cursor:default}
+.sz{background:var(--wh);border-radius:16px;padding:20px 16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);text-align:center}
+.sz h3{font-family:"DM Serif Display",serif;font-size:18px;color:var(--g1);margin-bottom:6px}
+.sz p{font-size:13px;color:var(--g3);margin-bottom:16px;line-height:1.5}
+.uw{font-size:12px;color:var(--or);font-weight:500;margin-bottom:12px;display:none}
+.sb{width:100%;padding:14px;background:var(--bl);color:var(--wh);border:none;border-radius:12px;font-family:"DM Sans",sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.rc{background:var(--wh);border-radius:16px;padding:20px 16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);display:none}
+.rc.show{display:block}
+.rsr{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.sc{width:72px;height:72px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;border:3px solid var(--bl)}
+.sc.pass{border-color:var(--gn)}
+.sc.fail{border-color:var(--rd)}
+.sn{font-family:"DM Serif Display",serif;font-size:22px;line-height:1;color:var(--g1)}
+.sd{font-size:11px;color:var(--g4);font-weight:500}
+.ri h3{font-family:"DM Serif Display",serif;font-size:18px;color:var(--g1);margin-bottom:3px}
+.rph{font-size:12px;color:var(--g3);margin-bottom:4px;display:none}
+.rlv{font-size:13px;font-weight:700;margin-bottom:4px}
+.rlv.pass{color:var(--gn)}
+.rlv.fail{color:var(--rd)}
+.rdc{font-size:12px;color:var(--g3);line-height:1.4}
+.btn-row{display:flex;flex-direction:column;gap:8px}
+.db{width:100%;padding:12px;background:var(--g1);color:var(--wh);border:none;border-radius:12px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.tgb{width:100%;padding:12px;background:#229ED9;color:var(--wh);border:none;border-radius:12px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.newbtn{width:100%;padding:12px;background:var(--or);color:var(--wh);border:none;border-radius:12px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--g1);color:var(--wh);padding:10px 20px;border-radius:20px;font-size:13px;opacity:0;transition:all .3s;z-index:200;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#snap{position:fixed;left:-9999px;top:0;width:540px;background:var(--wh);display:none;font-family:"DM Sans",sans-serif}
+.sa{height:5px;background:linear-gradient(90deg,#007AFF,#5AC8FA)}
+.sh{padding:20px 24px 16px;border-bottom:.5px solid var(--g5);display:flex;align-items:flex-start;justify-content:space-between}
+.smr{display:flex;border-bottom:.5px solid var(--g5)}
+.smc{flex:1;padding:10px 14px;border-right:.5px solid var(--g5)} .smc:last-child{border-right:none}
+.sml{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--g4);margin-bottom:3px}
+.smv{font-size:13px;font-weight:600;color:var(--g1)}
+.sss{padding:16px 20px;border-bottom:.5px solid var(--g5);display:flex;align-items:center;gap:16px}
+.ssc{width:64px;height:64px;border-radius:50%;border:3px solid var(--bl);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.ssc.pass{border-color:var(--gn)} .ssc.fail{border-color:var(--rd)}
+.ssn{font-family:"DM Serif Display",serif;font-size:20px;color:var(--g1);line-height:1}
+.ssd{font-size:10px;color:var(--g4);font-weight:500}
+.sln{font-family:"DM Serif Display",serif;font-size:18px;margin-bottom:3px}
+.sln.pass{color:var(--gn)} .sln.fail{color:var(--rd)}
+.slr{font-size:11px;color:var(--g3)}
+.sgb{padding:8px 12px 4px} .sgr{display:grid;grid-template-columns:repeat(5,1fr);margin-bottom:4px}
+.sgx{text-align:center;padding:4px 2px;display:flex;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:500;border-radius:6px;color:var(--g2)}
+.sgx.ok{background:var(--gnl);color:#1a7a2e} .sgx.no{background:var(--rdl);color:#c0392b} .sgx.sk{color:var(--g4)}
+.sgxn{font-size:9px;color:var(--g4)}
+.sf{padding:12px 20px;border-top:.5px solid var(--g5);display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+.sfr{font-size:10px;color:var(--g4)} .sfr span{color:var(--bl);font-weight:600}
+/* split-screen reading layout */
+.split{display:block}
+.split-left,.split-right{min-width:0}
+.rd-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px}
+.rd-head .ct{margin-bottom:0}
+.name-row{display:flex;flex-direction:column;gap:10px}
+.sec-note{font-size:12px;color:var(--g3);line-height:1.5;margin:2px 4px 10px}
+.gone{display:none!important}
+.rd-resize{display:none}
+/* mobile completion bar */
+.mbar{display:none}
+@media(min-width:560px){.name-row{flex-direction:row;gap:14px}.name-field{flex:1}}
+@media(max-width:979px){
+  body{padding-bottom:90px}
+  /* pin the passage to the top of the screen; questions scroll beneath it, so both stay visible */
+  .split-left{position:sticky;top:var(--tbh,52px);z-index:40;background:var(--g6)}
+  #readingCard{display:flex;flex-direction:column;overflow:hidden;height:var(--passage-h,42vh);margin-bottom:10px;box-shadow:0 5px 16px rgba(0,0,0,.12)}
+  #readingCard .rd-head{flex:0 0 auto}
+  #readingCard .rd-scroll{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-right:3px}
+  #readingCard.mini{height:auto;max-height:none}
+  #readingCard.mini .rd-scroll{display:none}
+  #readingCard.mini .rd-head{margin-bottom:0}
+  #readingCard .rd-resize{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:22px;margin:2px -16px -16px;cursor:row-resize;touch-action:none}
+  #readingCard .rd-resize::before{content:"";width:44px;height:4px;border-radius:3px;background:var(--g4);transition:background .15s}
+  #readingCard .rd-resize:active::before{background:var(--bl)}
+  #readingCard.mini .rd-resize{display:none}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:100;background:var(--wh);border-top:.5px solid var(--g5);box-shadow:0 -2px 14px rgba(0,0,0,.08);padding:9px 12px;align-items:center;gap:9px}
+  .mbar.hidden{display:none}
+  .mbar-btn{flex-shrink:0;background:var(--g6);color:var(--g1);border:1.5px solid var(--g5);border-radius:11px;padding:11px 13px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px}
+  .mbar-btn.active{background:var(--bll);border-color:var(--bl);color:var(--bl)}
+  .mbar-prog{flex:1;text-align:center;font-size:12px;font-weight:600;color:var(--g3);line-height:1.2}
+  .mbar-prog b{color:var(--bl);font-size:14px}
+  .mbar-submit{flex-shrink:0;background:var(--bl);color:#fff;border:none;border-radius:11px;padding:11px 18px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+}
+@media(min-width:980px){
+  .page{max-width:1100px;padding:20px 24px 36px}
+  .split{display:flex;gap:22px;align-items:flex-start}
+  .split-left{flex:0 0 47%;position:sticky;top:70px;max-height:calc(100vh - 92px);overflow-y:auto;padding-right:3px}
+  .split-right{flex:1}
+  .tail{max-width:600px;margin:0 auto}
+  #readingCard{margin-bottom:0}
+  .split-left::-webkit-scrollbar{width:7px}
+  .split-left::-webkit-scrollbar-thumb{background:var(--g5);border-radius:4px}
+  .split-left::-webkit-scrollbar-track{background:transparent}
+}
+</style>
+</head>
+<body>
+<div class="tb">
+  <div class="brand"><span class="bk">Seve</span><span class="bb">n</span><span class="bk">ine</span></div>
+  <div class="badge">IELTS Placement</div>
+  <div class="pgw"><div class="pgb"><div class="pgf" id="pgf"></div></div><div class="pgl" id="pgl">0 / 9</div></div>
+</div>
+<div class="page">
+  <div class="card">
+    <div class="ct">IELTS Placement Test</div>
+    <div class="csub">10 questions covering reading comprehension and vocabulary. Complete without a dictionary or external help. Minimum 7/10 required to join the IELTS course.</div>
+    <div class="name-row">
+      <div class="name-field">
+        <div class="fl">Your name</div>
+        <input class="mi" id="sName" type="text" placeholder="Enter your full name" autocomplete="off">
+      </div>
+      <div class="name-field">
+        <div class="fl">Phone number</div>
+        <input class="mi" id="sPhone" type="tel" placeholder="+998 90 123 45 67" autocomplete="off">
+      </div>
+    </div>
+  </div>
+  <div class="rb" id="rb">
+    <span>You have saved progress from a previous session.</span>
+    <button id="clrBtn" type="button">Clear &amp; restart</button>
+  </div>
+<div class="split">
+<div class="split-left">
+<div class="card" id="readingCard">
+  <div class="rd-head">
+    <div class="ct">Reading Passage — The Potato</div>
+  </div>
+  <div class="rd-scroll">
+  <div class="csub">Read the passage, then answer Questions 1–5 below. For Questions 1–4 choose <strong>True</strong>, <strong>False</strong>, or <strong>Not Given</strong>. For Question 5, complete the sentence with <strong>one word</strong> from the passage.</div>
+  <div class="rdg" id="rdgBody">
+    <p>Early Spanish chroniclers who misused the Indian word <em>batata</em> (sweet potato) as the name for the potato noted the importance of the tuber to the Incan Empire. The Incas had learned to preserve the potato for storage by dehydrating and mashing potatoes into a substance called <em>Chuchu</em>. Chuchu could be stored in a room for up to 10 years, providing excellent insurance against possible crop failures. As well as using the food as a staple crop, the Incas thought potatoes made childbirth easier and used it to treat injuries.</p>
+    <p>The Spanish conquistadors first encountered the potato when they arrived in Peru in 1532 in search of gold, and noted Inca miners eating chuchu. At the time the Spaniards failed to realize that the potato represented a far more important treasure than either silver or gold, but they did gradually begin to use potatoes as basic rations aboard their ships. After the arrival of the potato in Spain in 1570, a few Spanish farmers began to cultivate them on a small scale, mostly as food for livestock.</p>
+    <p>In northern Europe, potatoes were primarily grown in botanical gardens as an exotic novelty. Even peasants refused to eat from a plant that produced ugly, misshapen tubers and that had come from a heathen civilization. Some felt that the potato plant's resemblance to plants in the nightshade family hinted that it was the creation of witches or devils.</p>
+    <p>In meat-loving England, farmers and urban workers regarded potatoes with extreme distaste. In 1662, the Royal Society recommended the cultivation of the tuber to the English government and the nation, but this recommendation had little impact. Potatoes did not become a staple until, during the food shortages associated with the Revolutionary Wars, the English government began to officially encourage potato cultivation.</p>
+    <p>Though Irish landholding practices were primitive in comparison with those of England, the potato's high yields allowed even the poorest farmers to produce more healthy food than they needed with scarcely any investment or hard labor.</p>
+  </div>
+  </div>
+  <div class="rd-resize" id="rdResize" aria-hidden="true"></div>
+</div>
+</div>
+<div class="split-right">
+<div class="sec-label">Questions 1–5 · Reading</div>
+<div class="qc" id="q1"><div class="qh"><span class="qn">1</span><span class="qt">The early Spanish called potato as the Incan name 'Chuchu'.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_0_0" onclick="sel(0,0)"><span class="oi" id="oi_0_0"></span><span>True</span></button><button class="ob" type="button" id="b_0_1" onclick="sel(0,1)"><span class="oi" id="oi_0_1"></span><span>False</span></button><button class="ob" type="button" id="b_0_2" onclick="sel(0,2)"><span class="oi" id="oi_0_2"></span><span>Not Given</span></button></div></div>
+<div class="qc" id="q2"><div class="qh"><span class="qn">2</span><span class="qt">The purposes of Spanish coming to Peru were to find out potatoes.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_1_0" onclick="sel(1,0)"><span class="oi" id="oi_1_0"></span><span>True</span></button><button class="ob" type="button" id="b_1_1" onclick="sel(1,1)"><span class="oi" id="oi_1_1"></span><span>False</span></button><button class="ob" type="button" id="b_1_2" onclick="sel(1,2)"><span class="oi" id="oi_1_2"></span><span>Not Given</span></button></div></div>
+<div class="qc" id="q3"><div class="qh"><span class="qn">3</span><span class="qt">Peasants at that time did not like to eat potatoes because they were ugly.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_2_0" onclick="sel(2,0)"><span class="oi" id="oi_2_0"></span><span>True</span></button><button class="ob" type="button" id="b_2_1" onclick="sel(2,1)"><span class="oi" id="oi_2_1"></span><span>False</span></button><button class="ob" type="button" id="b_2_2" onclick="sel(2,2)"><span class="oi" id="oi_2_2"></span><span>Not Given</span></button></div></div>
+<div class="qc" id="q4"><div class="qh"><span class="qn">4</span><span class="qt">The popularity of potatoes in the UK was due to food shortages during the war.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_3_0" onclick="sel(3,0)"><span class="oi" id="oi_3_0"></span><span>True</span></button><button class="ob" type="button" id="b_3_1" onclick="sel(3,1)"><span class="oi" id="oi_3_1"></span><span>False</span></button><button class="ob" type="button" id="b_3_2" onclick="sel(3,2)"><span class="oi" id="oi_3_2"></span><span>Not Given</span></button></div></div>
+<div class="qc" id="q5"><div class="qh"><span class="qn">5</span><span class="qt">The potato's high yields help the poorest farmers to produce more healthy food almost without ___.<span class="pts-label">(2 pts)</span></span></div><div class="qo"><input class="fill-input" id="fill_4" type="text" placeholder="Type your answer..." oninput="selFill(4,this.value)"></div></div>
+</div>
+</div>
+<div class="tail">
+<div class="sec-label">Questions 6–9 · Vocabulary</div>
+<div class="sec-note">These questions test vocabulary only — choose the best word to complete or replace the underlined word. The reading passage above is <strong>not</strong> needed for this section.</div>
+<div class="qc" id="q6"><div class="qh"><span class="qn">6</span><span class="qt">The teacher encouraged her students to ___ their creativity through art projects.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_5_0" onclick="sel(5,0)"><span class="oi" id="oi_5_0"></span><span>express</span></button><button class="ob" type="button" id="b_5_1" onclick="sel(5,1)"><span class="oi" id="oi_5_1"></span><span>suppress</span></button><button class="ob" type="button" id="b_5_2" onclick="sel(5,2)"><span class="oi" id="oi_5_2"></span><span>repress</span></button><button class="ob" type="button" id="b_5_3" onclick="sel(5,3)"><span class="oi" id="oi_5_3"></span><span>depress</span></button></div></div>
+<div class="qc" id="q7"><div class="qh"><span class="qn">7</span><span class="qt">The hotel offers a ___ range of amenities, including a swimming pool, spa, and fitness center.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_6_0" onclick="sel(6,0)"><span class="oi" id="oi_6_0"></span><span>limited</span></button><button class="ob" type="button" id="b_6_1" onclick="sel(6,1)"><span class="oi" id="oi_6_1"></span><span>diverse</span></button><button class="ob" type="button" id="b_6_2" onclick="sel(6,2)"><span class="oi" id="oi_6_2"></span><span>restricted</span></button><button class="ob" type="button" id="b_6_3" onclick="sel(6,3)"><span class="oi" id="oi_6_3"></span><span>narrow</span></button></div></div>
+<div class="qc" id="q8"><div class="qh"><span class="qn">8</span><span class="qt">The book had an <u>intriguing</u> plot that kept me engaged until the end.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_7_0" onclick="sel(7,0)"><span class="oi" id="oi_7_0"></span><span>predictable</span></button><button class="ob" type="button" id="b_7_1" onclick="sel(7,1)"><span class="oi" id="oi_7_1"></span><span>tedious</span></button><button class="ob" type="button" id="b_7_2" onclick="sel(7,2)"><span class="oi" id="oi_7_2"></span><span>captivating</span></button><button class="ob" type="button" id="b_7_3" onclick="sel(7,3)"><span class="oi" id="oi_7_3"></span><span>monotonous</span></button></div></div>
+<div class="qc" id="q9"><div class="qh"><span class="qn">9</span><span class="qt">Sarah's new job allows her to work <u>remotely</u> from home.<span class="pts-label">(1 pt)</span></span></div><div class="qo"><button class="ob" type="button" id="b_8_0" onclick="sel(8,0)"><span class="oi" id="oi_8_0"></span><span>flexibly</span></button><button class="ob" type="button" id="b_8_1" onclick="sel(8,1)"><span class="oi" id="oi_8_1"></span><span>physically</span></button><button class="ob" type="button" id="b_8_2" onclick="sel(8,2)"><span class="oi" id="oi_8_2"></span><span>diligently</span></button><button class="ob" type="button" id="b_8_3" onclick="sel(8,3)"><span class="oi" id="oi_8_3"></span><span>sporadically</span></button></div></div>
+  <div class="sz" id="sz">
+    <h3>Ready to submit?</h3>
+    <p>Once submitted you cannot change your answers.</p>
+    <div class="uw" id="uw"></div>
+    <button class="sb" id="subBtn" type="button">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Submit Test
+    </button>
+  </div>
+  <div class="rc" id="rc">
+    <div class="rsr">
+      <div class="sc" id="scoreCircle"><span class="sn" id="scn">-</span><span class="sd">/ 10</span></div>
+      <div class="ri">
+        <h3 id="rn">-</h3>
+        <div class="rph" id="rph"></div>
+        <div class="rlv" id="rlv">-</div>
+        <div class="rdc" id="rdc">-</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="db" id="dlBtn" type="button">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Results Image
+      </button>
+      <a class="tgb" href="https://t.me/ask_sevenine" target="_blank">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.167l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.978.392z"/></svg>
+        Send to Sevenine on Telegram
+      </a>
+      <button class="newbtn" id="newTestBtn" type="button">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.76"/></svg>
+        New Test (clear answers)
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<div id="snap">
+  <div class="sa"></div>
+  <div class="sh">
+    <div><span class="bk" style="font-size:22px">Seve</span><span class="bb" style="font-size:22px">n</span><span class="bk" style="font-size:22px">ine</span></div>
+    <div style="text-align:right"><div style="font-family:'DM Serif Display',serif;font-size:16px;color:#1C1C1E">IELTS Placement Test</div><div style="font-size:10px;color:#AEAEB2;margin-top:3px">Reading &amp; Vocabulary</div></div>
+  </div>
+  <div class="smr" id="smr"></div>
+  <div class="sss" id="sss"></div>
+  <div class="sgb" id="sgb"></div>
+  <div class="sf"><span><span class="bk" style="font-size:13px">Seve</span><span class="bb" style="font-size:13px">n</span><span class="bk" style="font-size:13px">ine</span></span><span class="sfr"><span>@sevenineuz</span> &middot; English School &middot; Tashkent</span></div>
+</div>
+<div class="mbar" id="mbar">
+  <button class="mbar-btn active" id="mbarPassage" type="button"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg><span id="mbarPassageLbl">Hide passage</span></button>
+  <div class="mbar-prog"><b id="mbarProg">0</b> / 9 answered</div>
+  <button class="mbar-submit" id="mbarSubmit" type="button">Submit</button>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+var A=[1, 1, 0, 0, -1, 0, 1, 2, 0];
+var O=[["True", "False", "Not Given"], ["True", "False", "Not Given"], ["True", "False", "Not Given"], ["True", "False", "Not Given"], [], ["express", "suppress", "repress", "depress"], ["limited", "diverse", "restricted", "narrow"], ["predictable", "tedious", "captivating", "monotonous"], ["flexibly", "physically", "diligently", "sporadically"]];
+var PTS=[1, 1, 1, 1, 2, 1, 1, 1, 1];
+var TYPES=["tfng", "tfng", "tfng", "tfng", "fill", "mc", "mc", "mc", "mc"];
+var FILL_ANS="investment";
+var FILL_IDX=4;
+var TOTAL_PTS=10;
+var PASS_PTS=7;
+
+function gid(id){return document.getElementById(id);}
+
+var KEY="sv9ielts1";
+var ans=new Array(9).fill(null);
+var fillVal="";
+var done=false;
+
+function sv(){
+  if(done)return;
+  try{localStorage.setItem(KEY,JSON.stringify({a:ans,f:fillVal,done:false,n:gid("sName").value,p:gid("sPhone").value}));}catch(e){}
+}
+gid("sName").oninput=sv;
+gid("sPhone").oninput=sv;
+
+function clearAll(){
+  try{localStorage.removeItem(KEY);}catch(e){}
+  ans=new Array(9).fill(null);fillVal="";done=false;
+  gid("sName").value="";gid("sPhone").value="";
+  gid("rb").style.display="none";
+  for(var qi=0;qi<9;qi++){
+    var card=gid("q"+(qi+1));
+    if(card)card.className="qc";
+    if(TYPES[qi]==="fill"){
+      var fi=gid("fill_"+qi);
+      if(fi){fi.value="";fi.className="fill-input";fi.disabled=false;}
+    } else {
+      for(var oi=0;oi<O[qi].length;oi++){
+        var b=gid("b_"+qi+"_"+oi);
+        if(b){b.className="ob";b.disabled=false;}
+        var ind=gid("oi_"+qi+"_"+oi);
+        if(ind)ind.textContent="";
+      }
+    }
+  }
+  gid("sz").style.display="";
+  gid("rc").className="rc";
+  var mb=gid("mbar");if(mb)mb.classList.remove("hidden");
+  gid("readingCard").classList.remove("mini");
+  var mpb=gid("mbarPassage");if(mpb)mpb.classList.add("active");
+  var lbl=gid("mbarPassageLbl");if(lbl)lbl.textContent="Hide passage";
+  upPg();
+}
+gid("clrBtn").onclick=clearAll;
+gid("newTestBtn").onclick=clearAll;
+
+function setTbh(){var tb=document.querySelector(".tb");if(tb)document.documentElement.style.setProperty("--tbh",tb.offsetHeight+"px");}
+setTbh();
+window.addEventListener("resize",setTbh);
+window.addEventListener("orientationchange",setTbh);
+
+(function(){
+  var rc=gid("readingCard");
+  var lbl=gid("mbarPassageLbl");
+  var mP=gid("mbarPassage");
+  if(mP)mP.onclick=function(){
+    var mini=rc.classList.toggle("mini");
+    this.classList.toggle("active",!mini);
+    if(lbl)lbl.textContent=mini?"Show passage":"Hide passage";
+  };
+  var mS=gid("mbarSubmit");if(mS)mS.onclick=function(){
+    var un=0;for(var i=0;i<9;i++){if(ans[i]===null)un++;}
+    if(un>0&&!confirm(un+" question"+(un>1?"s":"")+" still unanswered. Submit anyway?"))return;
+    gid("subBtn").click();
+  };
+  var readingSec=document.querySelector(".split");
+  if(readingSec&&mP&&("IntersectionObserver" in window)){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting)mP.classList.remove("gone");
+        else mP.classList.add("gone");
+      });
+    },{threshold:0});
+    io.observe(readingSec);
+  }
+})();
+
+(function(){
+  var card=gid("readingCard");
+  var handle=gid("rdResize");
+  if(!card||!handle)return;
+  var startY=0,startH=0,dragging=false;
+  function clampH(h){
+    var tbh=parseInt(getComputedStyle(document.documentElement).getPropertyValue("--tbh"))||52;
+    var min=110;
+    var max=Math.max(min,window.innerHeight-tbh-150);
+    return Math.min(max,Math.max(min,h));
+  }
+  handle.addEventListener("pointerdown",function(e){
+    if(card.classList.contains("mini"))return;
+    dragging=true;startY=e.clientY;startH=card.offsetHeight;
+    try{handle.setPointerCapture(e.pointerId);}catch(_){}
+    e.preventDefault();
+  });
+  handle.addEventListener("pointermove",function(e){
+    if(!dragging)return;
+    var h=clampH(startH+(e.clientY-startY));
+    document.documentElement.style.setProperty("--passage-h",h+"px");
+    e.preventDefault();
+  });
+  function endDrag(e){if(dragging){dragging=false;try{handle.releasePointerCapture(e.pointerId);}catch(_){}}}
+  handle.addEventListener("pointerup",endDrag);
+  handle.addEventListener("pointercancel",endDrag);
+})();
+
+function sel(qi,oi){
+  if(done)return;
+  var prev=ans[qi];
+  if(prev!==null){var pb=gid("b_"+qi+"_"+prev);if(pb)pb.className="ob";}
+  ans[qi]=oi;
+  var nb=gid("b_"+qi+"_"+oi);if(nb)nb.className="ob sel";
+  var card=gid("q"+(qi+1));if(card)card.className="qc ans";
+  upPg();sv();
+}
+
+function selFill(qi,val){
+  if(done)return;
+  fillVal=val;
+  ans[qi]=val.trim().length>0?0:null;
+  var card=gid("q"+(qi+1));if(card)card.className=val.trim().length>0?"qc ans":"qc";
+  upPg();sv();
+}
+
+function upPg(){
+  var n=0;for(var i=0;i<9;i++){if(ans[i]!==null)n++;}
+  gid("pgf").style.width=(n/9*100)+"%";
+  gid("pgl").textContent=n+" / 9";
+  var mp=gid("mbarProg");if(mp)mp.textContent=n;
+}
+
+gid("subBtn").onclick=function(){
+  var un=0;for(var i=0;i<9;i++){if(ans[i]===null)un++;}
+  if(un>0){gid("uw").textContent=un+" question"+(un>1?"s":"")+" unanswered - will count as wrong.";gid("uw").style.display="block";}
+  done=true;
+  var correct=0;
+  for(var qi=0;qi<9;qi++){
+    var isOk=false;
+    if(TYPES[qi]==="fill"){
+      isOk=fillVal.trim().toLowerCase()===FILL_ANS;
+      var fi=gid("fill_"+qi);
+      if(fi){fi.disabled=true;fi.className="fill-input "+(isOk?"ok":"no");}
+      if(isOk)correct+=PTS[qi];
+    } else {
+      var si=ans[qi];
+      isOk=(si!==null)&&(si===A[qi]);
+      if(isOk)correct+=PTS[qi];
+      var card=gid("q"+(qi+1));if(card)card.className="qc "+(isOk?"ok":"no");
+      for(var oi=0;oi<O[qi].length;oi++){
+        var b=gid("b_"+qi+"_"+oi);if(!b)continue;
+        b.disabled=true;
+        var ind=gid("oi_"+qi+"_"+oi);
+        if(oi===si){b.className="ob "+(isOk?"ok":"no");if(ind)ind.textContent=isOk?"V":"X";}
+        else{b.className="ob dim";}
+      }
+    }
+    var card2=gid("q"+(qi+1));
+    if(card2&&TYPES[qi]!=="fill"){/* already set */}
+    else if(card2&&TYPES[qi]==="fill"){card2.className="qc "+(fillVal.trim().toLowerCase()===FILL_ANS?"ok":"no");}
+  }
+  try{localStorage.setItem(KEY,JSON.stringify({a:ans,f:fillVal,done:true,n:gid("sName").value,p:gid("sPhone").value}));}catch(e){}
+  gid("sz").style.display="none";
+  showRes(correct);
+  upPg();
+  var mb=gid("mbar");if(mb)mb.classList.add("hidden");
+  try{gid("rc").scrollIntoView({behavior:"smooth",block:"start"});}catch(e){}
+};
+
+function showRes(c){
+  var pass=c>=PASS_PTS;
+  var nm=gid("sName").value.trim()||"Student";
+  var ph=gid("sPhone").value.trim();
+  gid("scn").textContent=c;
+  var sc=gid("scoreCircle");if(sc)sc.className="sc "+(pass?"pass":"fail");
+  gid("rn").textContent=nm;
+  if(ph){gid("rph").textContent="Tel: "+ph;gid("rph").style.display="block";}
+  var rlv=gid("rlv");
+  rlv.textContent=pass?"Eligible for IELTS":"Not yet eligible for IELTS";
+  rlv.className="rlv "+(pass?"pass":"fail");
+  gid("rdc").textContent=pass
+    ?"Score "+c+"/10 - You meet the minimum requirement to join the IELTS course."
+    :"Score "+c+"/10 - You need at least 7/10 to join the IELTS course. Keep practising!";
+  gid("rc").className="rc show";
+}
+
+gid("dlBtn").onclick=function(){
+  var btn=gid("dlBtn");
+  btn.textContent="Generating...";btn.disabled=true;
+  buildSnap();
+  var snap=gid("snap");snap.style.display="block";
+  setTimeout(function(){
+    html2canvas(snap,{scale:2,useCORS:true,logging:false,backgroundColor:"#ffffff"}).then(function(canvas){
+      snap.style.display="none";
+      var img=canvas.toDataURL("image/png");
+      var nm=(gid("sName").value.trim()||"Student").replace(/\s+/g,"_");
+      var mob=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if(mob){
+        var w=window.open("","_blank");
+        if(w){w.document.write('<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh}img{max-width:100%;height:auto}</style></head><body><img src="'+img+'" /></body></html>');w.document.close();}
+        else{var a=document.createElement("a");a.href=img;a.download="IELTS_"+nm+".png";a.click();}
+      }else{var a=document.createElement("a");a.href=img;a.download="Sevenine_IELTS_"+nm+".png";a.click();}
+      btn.textContent="Done!";btn.style.background="var(--gn)";
+      setTimeout(function(){btn.textContent="Download Results Image";btn.style.background="";btn.disabled=false;},3000);
+    }).catch(function(){snap.style.display="none";btn.textContent="Download Results Image";btn.disabled=false;});
+  },200);
+};
+
+function buildSnap(){
+  var nm=gid("sName").value.trim()||"Student";
+  var ph=gid("sPhone").value.trim()||"-";
+  var correct=0;
+  for(var qi=0;qi<9;qi++){
+    if(TYPES[qi]==="fill"){if(fillVal.trim().toLowerCase()===FILL_ANS)correct+=PTS[qi];}
+    else{var si=ans[qi];if(si!==null&&si===A[qi])correct+=PTS[qi];}
+  }
+  var pass=correct>=PASS_PTS;
+  var dt=new Date().toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+  var mh="";
+  var mc=[{k:"Name",v:nm},{k:"Phone",v:ph},{k:"Score",v:correct+" / 10"},{k:"Date",v:dt}];
+  for(var i=0;i<mc.length;i++){mh+='<div class="smc"><div class="sml">'+mc[i].k+'</div><div class="smv">'+mc[i].v+'</div></div>';}
+  gid("smr").innerHTML=mh;
+  var statusTxt=pass?"Eligible for IELTS Course":"Not yet eligible";
+  var statusCol=pass?"#34C759":"#FF3B30";
+  gid("sss").innerHTML='<div class="ssc '+(pass?"pass":"fail")+'"><span class="ssn">'+correct+'</span><span class="ssd">/ 10</span></div><div><div class="sln '+(pass?"pass":"fail")+'">'+statusTxt+'</div><div class="slr">Minimum required: 7 / 10</div><div style="font-size:11px;color:#636366;margin-top:4px">'+(pass?"Meets the entry requirement for IELTS course.":"Does not meet the minimum requirement yet.")+'</div></div>';
+  var rows="";
+  var perRow=5;var numQ=9;
+  for(var row=0;row<2;row++){
+    var cells="";
+    for(var col=0;col<perRow;col++){
+      var qi=row*perRow+col;
+      if(qi>=numQ){cells+='<div class="sgx"></div>';continue;}
+      var isOk=false;
+      if(TYPES[qi]==="fill"){isOk=fillVal.trim().toLowerCase()===FILL_ANS;}
+      else{var si=ans[qi];isOk=si!==null&&si===A[qi];}
+      var cls=ans[qi]===null&&TYPES[qi]!=="fill"?"sk":isOk?"ok":"no";
+      if(TYPES[qi]==="fill"&&fillVal.trim().length===0)cls="sk";
+      cells+='<div class="sgx '+cls+'"><span class="sgxn">'+(qi+1)+(PTS[qi]>1?"*":"")+'</span>'+(cls==="sk"?"-":isOk?"V":"X")+'</div>';
+    }
+    rows+='<div class="sgr">'+cells+'</div>';
+  }
+  gid("sgb").innerHTML=rows+'<div style="font-size:10px;color:#AEAEB2;padding:4px 0 0">* = 2 points question</div>';
+}
+
+(function(){
+  var saved=null;
+  try{var r=localStorage.getItem(KEY);if(r)saved=JSON.parse(r);}catch(e){}
+  if(!saved)return;
+  var hasData=saved.n||(saved.a&&saved.a.some(function(x){return x!==null;}))||saved.f;
+  if(!hasData)return;
+  ans=saved.a||new Array(9).fill(null);
+  fillVal=saved.f||"";
+  done=saved.done||false;
+  if(saved.n)gid("sName").value=saved.n;
+  if(saved.p)gid("sPhone").value=saved.p;
+  for(var qi=0;qi<9;qi++){
+    if(TYPES[qi]==="fill"){
+      var fi=gid("fill_"+qi);
+      if(fi&&fillVal){fi.value=fillVal;if(!done)gid("q"+(qi+1)).className="qc ans";}
+    } else {
+      var oi=ans[qi];if(oi===null)continue;
+      var b=gid("b_"+qi+"_"+oi);if(b)b.className="ob sel";
+      var card=gid("q"+(qi+1));if(card&&!done)card.className="qc ans";
+    }
+  }
+  if(!done){gid("rb").style.display="flex";}
+  else{
+    var correct=0;
+    for(var qi=0;qi<9;qi++){
+      var isOk=false;
+      if(TYPES[qi]==="fill"){
+        isOk=fillVal.trim().toLowerCase()===FILL_ANS;
+        var fi=gid("fill_"+qi);if(fi){fi.disabled=true;fi.className="fill-input "+(isOk?"ok":"no");}
+        if(isOk)correct+=PTS[qi];
+        var card=gid("q"+(qi+1));if(card)card.className="qc "+(isOk?"ok":"no");
+      } else {
+        var si=ans[qi];isOk=si!==null&&si===A[qi];
+        if(isOk)correct+=PTS[qi];
+        var card=gid("q"+(qi+1));if(card)card.className="qc "+(isOk?"ok":"no");
+        for(var oi=0;oi<O[qi].length;oi++){
+          var b=gid("b_"+qi+"_"+oi);if(!b)continue;b.disabled=true;
+          var ind=gid("oi_"+qi+"_"+oi);
+          if(oi===si){b.className="ob "+(isOk?"ok":"no");if(ind)ind.textContent=isOk?"V":"X";}
+          else{b.className="ob dim";}
+        }
+      }
+    }
+    gid("sz").style.display="none";
+    showRes(correct);
+    var mb=gid("mbar");if(mb)mb.classList.add("hidden");
+  }
+  upPg();
+})();
+</script>
+</body>
+</html>
